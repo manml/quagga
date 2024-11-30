@@ -197,7 +197,7 @@ bgp_accept (struct thread *thread)
   accept_sock = THREAD_FD (thread);
   if (accept_sock < 0)
     {
-      zlog_err ("accept_sock is nevative value %d", accept_sock);
+      zlog_err ("accept_sock is negative value %d", accept_sock);
       return -1;
     }
   listener->thread = thread_add_read (bm->master, bgp_accept, listener, accept_sock);
